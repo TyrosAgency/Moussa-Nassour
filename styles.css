@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+
+    /* Set the background color to gray */
+    position: relative;
+    cursor: none;
+}
+
+/* Apply the yellow color to selected text */
+::selection {
+    background-color: yellow;
+    color: black;
+    /* Change the text color as needed for contrast */
+}
+
+/* Apply the yellow color to selected text for older browsers */
+::-moz-selection {
+    background-color: yellow;
+    color: black;
+    /* Change the text color as needed for contrast */
+}
+
+.glow {
+    color: #eea47fff;
+
+    text-shadow: 0 0 5px #01867b, 0 0 10px #012086, 0 0 13px #ffe868,
+        0 0 16px #860111, 0 0 20px #290186, 0 0 24px #017686, 0 0 30px #760186;
+}
+
+@keyframes shine {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.star {
+    font-size: 14px;
+    color: #ffffff;
+    /* Star color is white */
+    position: absolute;
+    animation: shine 1s ease-in-out infinite alternate, glowing 2s infinite;
+}
+
+@keyframes meteor-fall {
+    0% {
+        transform: translate(-20%, -20%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(calc(100vw + 10px), calc(100vh + 10px));
+        opacity: 0;
+    }
+}
+
+
+
+.meteor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+
+    /* Orange color */
+    border-radius: 50%;
+    /* Other properties like shape, etc. */
+    left: 50%;
+    top: -20px;
+
+    animation-name: meteor-fall;
+    animation-duration: 5s;
+    /* Slower animation duration */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* CSS for violet vertical cursor */
+.violet-cursor {
+    color: violet;
+    /* Violet color for the cursor */
+    animation: blink-animation 1s infinite;
+}
+
+@keyframes blink-animation {
+
+    0%,
+    100% {
+        opacity: 1;
+        /* Fully visible */
+    }
+
+    50% {
+        opacity: 0;
+        /* Invisible */
+    }
+}
+
+/* Apply the typing animation to the text */
+#intro-text {
+
+    /* Adjust the font size as needed */
+    color: white;
+    /* Text color */
+    overflow: hidden;
+    border-right: 2px solid violet;
+    /* Adjust the color and thickness as needed */
+    white-space: nowrap;
+    animation: typing 3s steps(30, end) infinite;
+    /* Adjust the duration as needed */
+}
+
+
+
+/* styles.css */
+
+/* Apply some styles to the cursor element */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s, background-color 0.2s;
+    mix-blend-mode: difference;
+    /* Blending mode for color effect */
+    z-index: 9999;
+    /* Ensure it's above other content */
+}
+
+/* Style for the digital clock container */
+.alarm-clock {
+    font-family: Arial, sans-serif;
+
+    color: #ff4500;
+    /* Adjust the color to match your design */
+    margin-left: 20px;
+    /* Adjust the margin as needed */
+}
+
+/* Style for the time */
+#time {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Style for the date */
+#date {
+    font-size: 14px;
+}
+
+/* Define the animation keyframes */
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Apply the animation to the SVG element */
+.waving-hand {
+    animation: wave 2s infinite;
+    /* Adjust the duration and iteration as needed */
+    transform-origin: center;
+    /* Set the rotation origin to the center of the SVG */
+}
+
+/* Container for positioning and animations */
+.cta-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Styling for the button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff4500;
+    /* Adjust the background color */
+    color: #fff;
+    /* Text color */
+
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    /* Rounded shape */
+    border: 2px solid transparent;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.cta-button:hover {
+    background-color: #ff5722;
+    /* Change to a different color on hover */
+    transform: scale(1.05);
+    /* Slight scale-up effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Add a shadow on hover */
+}
+
+/* CSS for the web developer text */
+.web-developer-text {
+    font-weight: bold;
+    /* Make the text bold */
+    color: #0073e6;
+    /* Set a custom color (you can choose your preferred color) */
+    text-transform: uppercase;
+    /* Convert the text to uppercase */
+    letter-spacing: 2px;
+    /* Add some letter spacing for extra emphasis */
+}
+
+/* Style the "ill1" photo */
+.ill1-photo {
+    width: 100%;
+    /* Adjust the width as needed */
+    max-width: 600px;
+    /* Set a maximum width to control the size */
+    margin: 20px auto;
+    /* Center the image horizontally and add margin for spacing */
+    display: block;
+    /* Ensure it behaves like a block element */
+}
+
+
+
+/* styles.css */
+
+.tagcloud {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: "monospace", cursive;
+}
+
+/* Change color of each text in sphere on hover   */
+.tagcloud--item:hover {
+    color: #eea47fff;
+}
+
+
+
+
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
